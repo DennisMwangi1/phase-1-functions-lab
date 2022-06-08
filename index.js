@@ -1,38 +1,25 @@
-// Code your solution in this file!
-
-
-
-const distanceFromHqInBlocks = (distance) => {
-    return Math.abs(distance - 42);
-  };
-
-const distanceFromHqInFeet = (distance) =>{
-    
-    return Math.abs((distance-42)*264)
+let scuberHq = 42;
+function distanceFromHqInBlocks(distance) {
+  return Math.abs(distance-scuberHq)
 }
 
-function distanceTravelledInFeet(start,destination){
-    return Math.abs((destination - start) * 264)
-    
+function distanceFromHqInFeet(distance) {
+  return (Math.abs(distance-scuberHq)*264)
 }
+function distanceTravelledInFeet(start, destination) {
 
-
- function calculatesFarePrice(start,destination){
-     var distance = destination-start;
-     const feet = Math.abs(distance)  * 264;
-    if (Math.abs(distance)=== 1) {
-      return 0
-  }
-    else if ( feet <= 2000) {
-      return (Math.abs(feet)-400) * 0.02;
-  }
-    else if ( feet<2500) {
-        return 25;
-  }
-  else if (feet >2500) {
-      return 'cannot travel that far'
+  return Math.abs(destination-start)*264
+}
+function calculatesFarePrice(start, destination) {
+  const rangeInFeet = Math.abs(destination-start)*264
+  if (rangeInFeet <= 400) {
+    return 0
+  }else if (rangeInFeet>400 && rangeInFeet<=2000) {
+    return (rangeInFeet - 400)* 0.02
+  }else if (rangeInFeet>2000 && rangeInFeet<=2500) {
+    return 25
+  }else{
+    return 'hello'
   }
 
-
- 
- }
+}
